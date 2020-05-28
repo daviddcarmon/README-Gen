@@ -56,7 +56,7 @@ async function readME() {
 
     // html_url
     const results = await axios.get(`https://api.github.com/users/${username}`);
-    var filename = data.project.toLowerCase().split(" ").join("") + ".md";
+    let filename = data.project.toLowerCase().split(" ").join("") + ".md";
     let allData = { ...results, ...data };
     let dataString = markDown(allData);
     let fileWrite = await writeFileAsync(filename, dataString);
